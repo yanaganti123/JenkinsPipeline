@@ -47,29 +47,5 @@ stage('Deployment Stage'){
                 echo '********* Deploy Stage Finished **********'
             }
     }
-  }
-  post {
-        always {
-            echo 'We came to an end!'
-            {
-              echo '********* Uploading to Artifactory is Started **********'
-             
-              echo '********* Uploading Finished **********'
-            }
-         }
-
-        }
-        success {
-          echo 'Build Successfull!!'
-    }
-        failure {
-        echo 'Sorry mate! build is Failed :('
-    }
-        unstable {
-            echo 'Run was marked as unstable'
-        }
-        changed {
-            echo 'Hey look at this, Pipeline state is changed.'
-        }
-    
+  } 
 }
