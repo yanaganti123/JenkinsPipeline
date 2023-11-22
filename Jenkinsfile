@@ -51,7 +51,6 @@ stage('Deployment Stage'){
   post {
         always {
             echo 'We came to an end!'
-            
             {
               echo '********* Uploading to Artifactory is Started **********'
              
@@ -59,7 +58,7 @@ stage('Deployment Stage'){
             }
          }
 
-         }
+        }
         success {
           echo 'Build Successfull!!'
     }
