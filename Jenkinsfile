@@ -57,9 +57,7 @@ stage('Deployment Stage'){
              
               echo '********* Uploading Finished **********'
             }
-          }
-                      
-            deleteDir()
+         }
 
          }
         success {
@@ -74,5 +72,5 @@ stage('Deployment Stage'){
         changed {
             echo 'Hey look at this, Pipeline state is changed.'
         }
-    }
+    
 }
