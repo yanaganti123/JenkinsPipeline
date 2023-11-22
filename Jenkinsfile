@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Clean Reports')
+    stage('github')
     {
       steps{
         echo '********* Cleaning Workspace Stage Started **********'
@@ -10,21 +10,21 @@ pipeline {
       }
     }
     
-    stage('Build Stage') {
+    stage('mvn Build Stage') {
       steps {
         echo '********* Build Stage Started **********'
        
         echo '********* Build Stage Finished **********'
         }
     }
-    stage('Testing Stage') {
+    stage('docker image build Stage') {
       steps {
         echo '********* Test Stage Started **********'
         
         echo '********* Test Stage Finished **********'
       }   
     }
-    stage('Configure Artifactory'){
+    stage('helm stage'){
       steps{
         script {
           
@@ -34,7 +34,7 @@ pipeline {
         }
        }
     }
-    stage('Sanity check') {
+    stage('kubernetes') {
             steps {
                echo '*******************sanity check*************************'
             }
